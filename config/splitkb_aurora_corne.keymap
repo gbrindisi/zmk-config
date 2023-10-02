@@ -67,7 +67,7 @@
             xxxxx      &kp LBRC   &kp AMPS   &kp STAR   &kp APOS   &kp RBRC       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  :       │  $       │  %       │  ^       │  +       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    │          │
-            xxxxx      &kp SEMI   &kp DLLR   &kp PRCNT  &kp CARET  &kp PLUS       HYPER      RSHIFT     LGUI       LALT       LCTRL      xxxxx
+            xxxxx      &kp SEMI   &kp DLLR   &kp PRCNT  &kp CARET  &kp PLUS       HYPER      &kp RSHIFT  &kp LGUI  &kp LALT   &kp LCTRL  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  ~       │  !       │  @       │  #       │  |       │   │          │          │          │          │          │          │
             xxxxx      &kp TILDE  &kp EXCL   &kp AT     &kp HASH   &kp PIPE       xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
@@ -84,7 +84,7 @@
             xxxxx      &kp LBKT   &kp N7     &kp N8     &kp N9     &kp RBKT       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  ;       │  4       │  5       │  6       │  =       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
-            xxxxx      &kp COLON  &kp N4     &kp N5     &kp N6     &kp EQUAL      HYPER      RSHIFT     LGUI       LALT       LCTRL      xxxxx
+            xxxxx      &kp COLON  &kp N4     &kp N5     &kp N6     &kp EQUAL      HYPER      &kp RSHIFT  &kp LGUI  &kp LALT   &kp LCTRL  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  `       │  1       │  2       │  3       │  \       │   │          │          │          │          │          │          │
             xxxxx      &kp TILDE  &kp N1     &kp N2     &kp N3     &kp BSLH       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
@@ -101,7 +101,7 @@
             xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx          &kp LG(C)  &kp LG(U)  LG(LS(N4)) &kp LG(X)  &kp LG(V)  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  CTRL    │  ALT     │  GUI     │  SHIFT   │  HYPER   │   │  LEFT    │  DOWN    │  UP      │  RIGHT   │          |          │
-            xxxxx      LCTRL      LALT       LGUI       LSHIFT     HYPER          &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  xxxxx      xxxxx
+            xxxxx      &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHIFT  HYPER         &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │          │   │          │          │          │          │          │          │
             xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx          &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    xxxxx      xxxxx
@@ -118,7 +118,7 @@
             xxxxx      &kp F12    &kp F7     &kp F8     &kp F9     &bt BT_NXT     &kp LG(C)  &kp LG(U)  LG(LS(N4)) &kp LG(X)  &kp LG(V)  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  11      │  4       │  5       │  6       │ bt prev  │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
-            xxxxx      &kp F11    &kp F4     &kp F5     &kp F6     &bt BT_PRV     HYPER      RSHIFT     LGUI       LALT       LCTRL      xxxxx
+            xxxxx      &kp F11    &kp F4     &kp F5     &kp F6     &bt BT_PRV     HYPER      &kp RSHIFT  &kp LGUI  &kp LALT   &kp LCTRL  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  10      │  1       │  2       │  3       │  bt clr  │   │          │          │          │          │          │          │
             xxxxx      &kp F10    &kp F2     &kp F2     &kp F3     &bt BT_CLR     xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
