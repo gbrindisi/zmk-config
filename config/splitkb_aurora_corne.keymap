@@ -37,7 +37,7 @@
 };
 
 #define HRML(k1,k2,k3,k4,k5) &hm LCTRL k1  &hm LALT k2  &hm LGUI k3  &hm LSHFT k4 &hm HYPER k5
-#define HRMR(k1,k2,k3,k4,k5) &hm HYPER k5  &hm RSHFT k1  &hm RGUI k2  &hm RALT k3  &hm RCTRL k4
+#define HRMR(k1,k2,k3,k4,k5) &hm HYPER k1  &hm RSHFT k2  &hm RGUI k3  &hm RALT k4  &hm RCTRL k5
 #define LAYER(k1,k2,k3,k4,k5,k6) &lt NAV k1     &lt NAV k2      &kp k3  &lt FUNC k4      &lt SYM k5      &lt NUM k6 
 
 / {
