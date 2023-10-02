@@ -87,7 +87,7 @@
             xxxxx      &kp COLON  &kp N4     &kp N5     &kp N6     &kp EQUAL      HYPER      RSHIFT     LGUI       LALT       LCTRL      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  `       │  1       │  2       │  3       │  \       │   │          │          │          │          │          │          │
-            xxxxx      &kp TILDE  &kp N1     &kp N2     &kp N3     &kp BSLSH      xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
+            xxxxx      &kp TILDE  &kp N1     &kp N2     &kp N3     &kp BSLH       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &kp N0     &kp DOT     &kp MINUS     xxxxx       xxxxx     xxxxx
         //   
