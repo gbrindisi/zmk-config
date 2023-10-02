@@ -17,8 +17,8 @@
 
 // Keycodes
 #define xxxxx &none
-#define HYPER &kp LC(LA(LG(LSHIFT)))
-#define SCREEN &kp LG(LS(N4))
+#define HYPER LC(LA(LG(LSHIFT)))
+#define SCREEN LG(LS(N4))
 
 
 
@@ -36,8 +36,8 @@
         };
 };
 
-#define HRML(k1,k2,k3,k4,k5) &hm LCTRL k1  &hm LALT k2  &hm LGUI k3  &hm LSHFT k4 &hm HYPER k5
-#define HRMR(k1,k2,k3,k4,k5) &hm HYPER k5  &hm RSHFT k1  &hm RGUI k2  &hm RALT k3  &hm RCTRL k4
+#define HRML(k1,k2,k3,k4,k5) &hm LCTRL k1  &hm LALT k2  &hm LGUI k3  &hm LSHFT k4 &hm LC(LA(LG(LSHIFT))) k5
+#define HRMR(k1,k2,k3,k4,k5) &hm LC(LA(LG(LSHIFT))) k5  &hm RSHFT k1  &hm RGUI k2  &hm RALT k3  &hm RCTRL k4
 #define LAYER(k1,k2,k3,k4,k5,k6) &lt NAV k1     &lt NAV k2      &kp k3  &lt FUNC k4      &lt SYM k5      &lt NUM k6 
 
 / {
@@ -85,7 +85,7 @@
             xxxxx      &kp LBKT   &kp N7     &kp N8     &kp N9     &kp RBKT       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  ;       │  4       │  5       │  6       │  =       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
-            xxxxx      &kp COLON  &kp N4     &kp N5     &kp N6     &kp EQUAL      HYPER      &kp RSHIFT  &kp LGUI  &kp LALT   &kp LCTRL  xxxxx
+            xxxxx      &kp COLON  &kp N4     &kp N5     &kp N6     &kp EQUAL      &kp HYPER  &kp RSHIFT  &kp LGUI  &kp LALT   &kp LCTRL  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  `       │  1       │  2       │  3       │  \       │   │          │          │          │          │          │          │
             xxxxx      &kp TILDE  &kp N1     &kp N2     &kp N3     &kp BSLH       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
@@ -99,10 +99,10 @@
                         bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │          │   │          │          │          │          │          │          │
-            xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx          &kp LG(C)  &kp LG(U)  SCREEN     &kp LG(X)  &kp LG(V)  xxxxx
+            xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx          &kp LG(C)  &kp LG(U)  &kp SCREEN &kp LG(X)  &kp LG(V)  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  CTRL    │  ALT     │  GUI     │  SHIFT   │  HYPER   │   │  LEFT    │  DOWN    │  UP      │  RIGHT   │          |          │
-            xxxxx      &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHIFT  HYPER         &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  xxxxx      xxxxx
+            xxxxx      &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHIFT &kp HYPER      &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │          │   │          │          │          │          │          │          │
             xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx          &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    xxxxx      xxxxx
@@ -116,10 +116,10 @@
                         bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │  12      │  7       │  8       │  9       │ bt next  │   │          │          │          │          │          │          |
-            xxxxx      &kp F12    &kp F7     &kp F8     &kp F9     &bt BT_NXT     &kp LG(C)  &kp LG(U)  SCREEN     &kp LG(X)  &kp LG(V)  xxxxx
+            xxxxx      &kp F12    &kp F7     &kp F8     &kp F9     &bt BT_NXT     &kp LG(C)  &kp LG(U)  &kp SCREEN &kp LG(X)  &kp LG(V)  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  11      │  4       │  5       │  6       │ bt prev  │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
-            xxxxx      &kp F11    &kp F4     &kp F5     &kp F6     &bt BT_PRV     HYPER      &kp RSHIFT  &kp LGUI  &kp LALT   &kp LCTRL  xxxxx
+            xxxxx      &kp F11    &kp F4     &kp F5     &kp F6     &bt BT_PRV     &kp HYPER  &kp RSHIFT  &kp LGUI  &kp LALT   &kp LCTRL  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  10      │  1       │  2       │  3       │  bt clr  │   │          │          │          │          │          │          │
             xxxxx      &kp F10    &kp F2     &kp F2     &kp F3     &bt BT_CLR     xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
