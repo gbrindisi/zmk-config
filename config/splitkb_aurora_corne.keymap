@@ -67,7 +67,7 @@
             xxxxx      &kp LBRC   &kp AMPS   &kp STAR   &kp APOS   &kp RBRC       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  :       │  $       │  %       │  ^       │  +       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    │          │
-            xxxxx      &kp SEMI   &kp DLR    &kp PRCNT  &kp CARET  &kp PLUS       HYPER      RSHIFT     LGUI       LALT       LCTRL      xxxxx
+            xxxxx      &kp SEMI   &kp DLLR   &kp PRCNT  &kp CARET  &kp PLUS       HYPER      RSHIFT     LGUI       LALT       LCTRL      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  ~       │  !       │  @       │  #       │  |       │   │          │          │          │          │          │          │
             xxxxx      &kp TILDE  &kp EXCL   &kp AT     &kp HASH   &kp PIPE       xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
