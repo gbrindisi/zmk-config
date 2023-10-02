@@ -36,6 +36,17 @@
         };
 };
 
+/ {
+        combos {
+                compatible = "zmk,combos";
+                combo_caps_word {
+                        timeout-ms = <30>;
+                        bindings = <&caps_word>;
+                        key-positions = <25 34>;
+                };
+        };
+};
+
 #define HRML(k1,k2,k3,k4,k5) &hm LCTRL k1  &hm LALT k2  &hm LGUI k3  &hm LSHFT k4 &hm HYPER k5
 #define HRMR(k1,k2,k3,k4,k5) &hm HYPER k1  &hm RSHFT k2  &hm RGUI k3  &hm RALT k4  &hm RCTRL k5
 #define LAYER(k1,k2,k3,k4,k5,k6) &lt NAV k1     &lt NAV k2      &kp k3  &lt FUNC k4      &lt SYM k5      &lt NUM k6 
