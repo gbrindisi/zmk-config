@@ -81,8 +81,8 @@
         //│          │  :       │  $       │  %       │  ^       │  +       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    │          │
             xxxxx      &kp COLON  &kp DLLR   &kp PRCNT  &kp CARET  &kp PLUS       &kp HYPER  &kp RSHIFT &kp LGUI  &kp LALT    &kp LCTRL  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  ~       │  !       │  @       │  #       │  |       │   │          │          │          │          │          │          │
-            xxxxx      &kp TILDE  &kp EXCL   &kp AT     &kp HASH   &kp PIPE       xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
+        //│          │  `       │  !       │  @       │  #       │  |       │   │          │          │          │          │          │          │
+            xxxxx      &kp GRAVE  &kp EXCL   &kp AT     &kp HASH   &kp PIPE       xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &kp LPAR  &kp RPAR    &kp MINUS      xxxxx      xxxxx      xxxxx
         //   
@@ -98,7 +98,7 @@
         //│          │  ;       │  4       │  5       │  6       │  =       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
             xxxxx      &kp SEMI   &kp N4     &kp N5     &kp N6     &kp EQUAL      &kp HYPER  &kp RSHIFT  &kp LGUI  &kp LALT   &kp LCTRL  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  `       │  1       │  2       │  3       │  \       │   │          │          │          │          │          │          │
+        //│          │  ~       │  1       │  2       │  3       │  \       │   │          │          │          │          │          │          │
             xxxxx      &kp TILDE  &kp N1     &kp N2     &kp N3     &kp BSLH       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &kp N0     &kp DOT     &kp MINUS     xxxxx       xxxxx     xxxxx
