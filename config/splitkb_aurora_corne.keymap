@@ -14,6 +14,7 @@
 #define NUM  2
 #define NAV  3
 #define FUNC 4
+#define FUN  5
 
 // Keycodes
 #define xxxxx &none
@@ -44,7 +45,24 @@
                         bindings = <&caps_word>;
                         key-positions = <25 34>;
                 };
+                combo_toggle_fun {
+                        timeout-ms = <30>;
+                        bindings = <&lt FUN>;
+                        key-positions = <39 40>;
+                };
         };
+};
+
+/ {
+	macros {
+		emj_wave: emj_wave {
+			label = "emj_wave";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			  = <&macro_tap &kp COLON &kp W  &kp A &kp V &kp E &kp COLON>;
+		};
+	};
 };
 
 #define HRML(k1,k2,k3,k4,k5) &hm LCTRL k1  &hm LALT k2  &hm LGUI k3  &hm LSHFT k4 &hm HYPER k5
@@ -139,6 +157,24 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  10      │  1       │  2       │  3       │  bt clr  │   │          │          │          │          │          │          │
             xxxxx      &kp F10    &kp F2     &kp F2     &kp F3     &bt BT_CLR     xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             xxxxx      xxxxx      xxxxx          xxxxx      xxxxx      xxxxx
+        //   
+                        >;
+                };           
+        	
+		    FUN_layer {
+			label = "fun!";
+                        bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │  12      │  7       │  8       │  9       │ bt next  │   │          │          │          │          │          │          |
+            xxxxx      xxxxx      &emj_wave  xxxxx      xxxxx      xxxxx          xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
+        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │  11      │  4       │  5       │  6       │ bt prev  │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
+            xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx          xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
+        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │  10      │  1       │  2       │  3       │  bt clr  │   │          │          │          │          │          │          │
+             xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx          xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
                                              xxxxx      xxxxx      xxxxx          xxxxx      xxxxx      xxxxx
         //   
