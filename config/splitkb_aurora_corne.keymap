@@ -56,7 +56,7 @@
 / {
 	macros {
 		emj_wave: emj_wave {
-			label = "emj_wave";
+			label = "emoji_wave";
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
@@ -163,7 +163,7 @@
                         >;
                 };           
         	
-		    FUN_layer {
+		        FUN_layer {
 			label = "fun!";
                         bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
