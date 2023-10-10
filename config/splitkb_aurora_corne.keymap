@@ -53,17 +53,7 @@
         };
 };
 
-/ {
-	macros {
-		emj_wave: emj_wave {
-			label = "emoji_wave";
-			compatible = "zmk,behavior-macro";
-			#binding-cells = <0>;
-			bindings
-			  = <&macro_tap &kp COLON &kp W  &kp A &kp V &kp E &kp COLON>;
-		};
-	};
-};
+
 
 #define HRML(k1,k2,k3,k4,k5) &hm LCTRL k1  &hm LALT k2  &hm LGUI k3  &hm LSHFT k4 &hm HYPER k5
 #define HRMR(k1,k2,k3,k4,k5) &hm HYPER k1  &hm RSHFT k2  &hm RGUI k3  &hm RALT k4  &hm RCTRL k5
@@ -164,11 +154,11 @@
                 };           
         	
 		        FUN_layer {
-			label = "fun!";
+			label = "funny";
                         bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │  12      │  7       │  8       │  9       │ bt next  │   │          │          │          │          │          │          |
-            xxxxx      xxxxx      &emj_wave  xxxxx      xxxxx      xxxxx          xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
+            xxxxx      xxxxx      &kp N4  xxxxx      xxxxx      xxxxx          xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  11      │  4       │  5       │  6       │ bt prev  │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
             xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx          xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
