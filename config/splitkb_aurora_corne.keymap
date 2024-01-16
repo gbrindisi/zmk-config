@@ -45,12 +45,6 @@
                         bindings = <&caps_word>;
                         key-positions = <25 34>;
                 };
-
-                my_combo: combo_a {
-                        compatible = "zmk,combo";
-                        bindings = <&kp A &kp B>;
-                        timeout-ms = <200>;
-                }
         };
 };
 
