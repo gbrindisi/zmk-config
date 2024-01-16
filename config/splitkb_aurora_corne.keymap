@@ -63,7 +63,7 @@
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
-			  = <&macro_tap &kp COLON &kp PLUS &kp 1 &kp COLON>;
+			  = <&macro_tap &kp COLON &kp PLUS &kp N1 &kp COLON>;
 		};
         emj_eyes: emj_eyes {
 			label = "emj_eyes";
