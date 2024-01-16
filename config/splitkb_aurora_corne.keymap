@@ -72,7 +72,7 @@
 			bindings
 			  = <&macro_tap &kp COLON &kp E &kp Y &kp E &kp S &kp COLON>;
 		};
-        emj_eyes: emj_ty {
+        emj_ty: emj_ty {
 			label = "emj_ty";
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
@@ -184,13 +184,13 @@
 			label = "stuff";
                         bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  12      │  7       │  8       │  9       │ bt next  │   │          │          │          │          │          │          |
+        //│          │  12      │  wave    │  8       │  9       │ ty       │   │          │          │          │          │          │          |
             xxxxx      xxxxx      &emj_wave  &emj_eyes  xxxxx      &emj_ty        xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  11      │  4       │  5       │  6       │ bt prev  │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
+        //│          │  cmd+s   │  4       │  5       │  6       │ +1       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
             xxxxx      &kp LG(S)  xxxxx      xxxxx      xxxxx      &emj_plusone   xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  10      │  1       │  2       │  3       │  bt clr  │   │          │          │          │          │          │          │
+        //│          │  10      │  cmd+s   │  cmd+s   │  cmd+s   │          │   │          │          │          │          │          │          │
              xxxxx      xxxxx     &kp LG(X)  &kp LG(C)  &kp LG(V)  xxxxx          xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
                                              xxxxx      xxxxx      xxxxx          xxxxx      xxxxx      xxxxx
