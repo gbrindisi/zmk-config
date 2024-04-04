@@ -21,7 +21,9 @@
 #define HYPER LC(LA(LG(LSHIFT)))
 #define SCREEN LG(LS(N4))
 
-
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
 
 / {
         behaviors {
