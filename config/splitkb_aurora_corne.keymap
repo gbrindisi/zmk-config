@@ -191,8 +191,8 @@
         //│          │  12      │  wave    │  8       │  9       │ ty       │   │          │          │          │          │          │          |
             xxxxx      xxxxx      &emj_wave  &emj_eyes  xxxxx      &emj_ty        xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  cmd+s   │  4       │  5       │  6       │ +1       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
-            xxxxx      &kp LG(S)  xxxxx      xxxxx      xxxxx      &emj_plusone   xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
+        //│          │          │  cmd+s   │  5       │  6       │ +1       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
+            xxxxx      xxxxx      &kp LG(S)  xxxxx      xxxxx      &emj_plusone   xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  10      │  cmd+s   │  cmd+s   │  cmd+s   │          │   │          │          │          │          │          │          │
              xxxxx      xxxxx     &kp LG(X)  &kp LG(C)  &kp LG(V)  xxxxx          xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
