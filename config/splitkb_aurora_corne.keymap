@@ -36,6 +36,11 @@
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
                 };
+                parpar: parentesis_parentesis {
+                        compatible = "zmk,behavior-mod-morph";
+                        bindings = <&kp LPAR>, <&kp RPAR>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
         };
 };
 
@@ -138,7 +143,7 @@
                         bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │  (       │  7       │  8       │  9       │  *       │   │          │          │          │          │          │          │
-            xxxxx      &kp LPAR   &kp N7     &kp N8     &kp N9     &kp STAR       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
+            xxxxx      &parpar    &kp N7     &kp N8     &kp N9     &kp STAR       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  ,       │  4       │  5       │  6       │  +       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
             xxxxx      &kp COMMA  &kp N4     &kp N5     &kp N6     &kp PLUS       &kp HYPER  &kp RSHIFT  &kp LGUI  &kp LALT   &kp LCTRL  xxxxx
