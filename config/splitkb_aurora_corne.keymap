@@ -105,7 +105,7 @@
 #define RL(k1,k2,k3) &lt FUNC k1  &lt SYM k2  &lt NUM k3
 
 // space become cmd when pressed to aid goofy hand while holding pointer with right
-#define SPGUI &hm LGUI SPACE
+#define SPGUI() &hm LGUI SPACE
 
 / {
         keymap {
@@ -124,7 +124,7 @@
         //│          │  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  / ?     │          │
             xxxxx      &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   xxxxx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-                                         LL( ESC,       TAB)       SPGUI      RL( RET,       BSPC,      DEL        )
+                                         LL( ESC,       TAB)       SPGUI()    RL( RET,       BSPC,      DEL        )
         //   
                         >;
                 };
