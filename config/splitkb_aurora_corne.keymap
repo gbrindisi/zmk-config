@@ -36,6 +36,13 @@
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
                 };
+
+                parpar: parentesis_parentesis {
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp LPAR>, <&kp RPAR>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
         };
 };
 
