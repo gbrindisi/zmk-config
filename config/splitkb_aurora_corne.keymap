@@ -137,14 +137,14 @@
 			label = "numbers";
                         bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │  7       │  8       │  9       │  ]       │   │          │          │          │          │          │          │
-            xxxxx      &kp LBKT   &kp N7     &kp N8     &kp N9     &kp RBKT       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
+        //│          │  (       │  7       │  8       │  9       │  *       │   │          │          │          │          │          │          │
+            xxxxx      &kp LPAR   &kp N7     &kp N8     &kp N9     &kp STAR       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  ;       │  4       │  5       │  6       │  =       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
-            xxxxx      &kp SEMI   &kp N4     &kp N5     &kp N6     &kp EQUAL      &kp HYPER  &kp RSHIFT  &kp LGUI  &kp LALT   &kp LCTRL  xxxxx
+        //│          │  ,       │  4       │  5       │  6       │  +       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
+            xxxxx      &kp COMMA  &kp N4     &kp N5     &kp N6     &kp PLUS       &kp HYPER  &kp RSHIFT  &kp LGUI  &kp LALT   &kp LCTRL  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  ~       │  1       │  2       │  3       │  \       │   │          │          │          │          │          │          │
-            xxxxx      &kp TILDE  &kp N1     &kp N2     &kp N3     &kp BSLH       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
+        //│          │  ~       │  1       │  2       │  3       │  /       │   │          │          │          │          │          │          │
+            xxxxx      &kp TILDE  &kp N1     &kp N2     &kp N3     &kp FSLH       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &kp N0     &kp DOT     &kp MINUS     xxxxx       xxxxx     xxxxx
         //   
