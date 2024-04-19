@@ -95,9 +95,17 @@
 	};
 };
 
+// home row mods, left and right
 #define HRML(k1,k2,k3,k4,k5) &hm LCTRL k1  &hm LALT k2  &hm LGUI k3  &hm LSHFT k4 &hm HYPER k5
 #define HRMR(k1,k2,k3,k4,k5) &hm HYPER k1  &hm RSHFT k2  &hm RGUI k3  &hm RALT k4  &hm RCTRL k5
-#define LAYER(k1,k2,k3,k4,k5,k6) &lt NAV k1     &lt NAV k2      &lt STUFF k3  &lt FUNC k4      &lt SYM k5      &lt NUM k6 
+
+// layer toggle on thumbs
+#define LAYER(k1,k2,k3,k4,k5,k6) &lt STUFF  k1 &lt NAV k2  &lt GOOFY k3  &lt FUNC k4  &lt SYM k5  &lt NUM k6
+#define LL(k1,k2) &lt STUFF k1 &lt NAV k2
+#define RL(k1,k2,k3) &lt FUNC k1  &lt SYM k2  &lt NUM k3
+
+// space become cmd when pressed to aid goofy hand while holding pointer with right
+#define SPGUI &hm LGUI SPACE
 
 / {
         keymap {
@@ -116,7 +124,7 @@
         //│          │  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  / ?     │          │
             xxxxx      &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   xxxxx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-                                  LAYER(     ESC,       TAB,       SPACE,         RET,       BSPC,      DEL        )
+                                         LL( ESC,       TAB)       SPGUI      RL( RET,       BSPC,      DEL        )
         //   
                         >;
                 };
@@ -125,8 +133,8 @@
 			label = "symbols";
                         bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │  &       │  *       │  )       │  ]       │   │          │          │          │          │          │          │
-            xxxxx      &kp LBKT   &kp AMPS   &kp STAR   &kp RPAR   &kp RBKT       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
+        //│          │  [       │  &       │  *       │  (       │  ]       │   │          │          │          │          │          │          │
+            xxxxx      &kp LBKT   &kp AMPS   &kp STAR   &kp LPAR   &kp RBKT       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  tbd     │  $       │  %       │  ^       │  =       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    │          │
             xxxxx      xxxxx      &kp DLLR   &kp PRCNT  &kp CARET  &kp EQUAL      &kp HYPER  &kp RSHIFT &kp LGUI  &kp LALT    &kp LCTRL  xxxxx
@@ -134,8 +142,8 @@
         //│          │  `       │  !       │  @       │  #       │  \       │   │          │          │          │          │          │          │
             xxxxx      &kp GRAVE  &kp EXCL   &kp AT     &kp HASH   &kp BSLH       xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                    (         '           -
-                                             &kp LPAR  &kp APOS    &kp MINUS      xxxxx      xxxxx      xxxxx
+        //                                    )         '           -              (O)
+                                             &kp RPAR  &kp APOS    &kp MINUS      xxxxx      xxxxx      xxxxx
         //   
                         >;
                 };    
@@ -153,7 +161,8 @@
         //│          │  ~       │  1       │  2       │  3       │  /       │   │          │          │          │          │          │          │
             xxxxx      &kp TILDE  &kp N1     &kp N2     &kp N3     &kp FSLH       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp N0     &kp DOT     &kp MINUS     xxxxx       xxxxx     xxxxx
+        //                                    0          .          -                                    (O)
+                                             &kp N0     &kp DOT    &kp MINUS      xxxxx       xxxxx     xxxxx
         //   
                         >;
                 };  
@@ -163,7 +172,7 @@
                         bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │          │   │          │          │          │          │          │          │
-            xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx          &kp LG(C)  &kp LG(U)  &kp SCREEN &kp LG(X)  &kp LG(V)  xxxxx
+            xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx          xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  CTRL    │  ALT     │  GUI     │  SHIFT   │  HYPER   │   │  LEFT    │  DOWN    │  UP      │  RIGHT   │          |          │
             xxxxx      &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHIFT &kp HYPER      &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  xxxxx      xxxxx
@@ -171,7 +180,8 @@
         //│          │          │          │          │          │          │   │          │          │          │          │          │          │
             xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx          &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    xxxxx      xxxxx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp N0     &kp DOT    &kp MINUS      &kp RET    &kp BKSP   &kp DEL
+        //                                               (O)
+                                             xxxxx      xxxxx      xxxxx          xxxxx      xxxxx      xxxxx
         //   
                         >;
                 };     
@@ -181,7 +191,7 @@
                         bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │  12      │  7       │  8       │  9       │          │   │          │          │          │          │          │          |
-            xxxxx      &kp F12    &kp F7     &kp F8     &kp F9     xxxxx          &kp LG(C)  &kp LG(U)  &kp SCREEN &kp LG(X)  &kp LG(V)  xxxxx
+            xxxxx      &kp F12    &kp F7     &kp F8     &kp F9     xxxxx          xxxxx       xxxxx     &kp SCREEN xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  11      │  4       │  5       │  6       │          │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
             xxxxx      &kp F11    &kp F4     &kp F5     &kp F6     xxxxx          &kp HYPER  &kp RSHIFT  &kp LGUI  &kp LALT   &kp LCTRL  xxxxx
@@ -189,24 +199,26 @@
         //│          │  10      │  1       │  2       │  3       │          │   │          │          │          │          │          │          │
             xxxxx      &kp F10    &kp F2     &kp F2     &kp F3     xxxxx          xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                                                         (O)
                                              xxxxx      xxxxx      xxxxx          xxxxx      xxxxx      xxxxx
         //   
                         >;
                 };           
-        	
+
 		        STUFF_layer {
 			label = "stuff";
                         bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  12      │  wave    │  8       │  9       │ ty       │   │          │          │          │          │          │          |
+        //│          │          │  wave    │          │          │ ty       │   │          │          │          │          │          │          |
             xxxxx      xxxxx      &emj_wave  &emj_eyes  xxxxx      &emj_ty        xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │  cmd+s   │  5       │  6       │ +1       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
-            xxxxx      xxxxx      &kp LG(S)  xxxxx      xxxxx      &emj_plusone   xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
+        //│          │          │          │          │          │ +1       │   │          │          │          │          │          │          │
+            xxxxx      xxxxx       xxxxx      xxxxx     xxxxx      &emj_plusone   xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  10      │  cmd+s   │  cmd+s   │  cmd+s   │          │   │ bt prev  │ bt next  │          │          │          │ bt clear │
-             xxxxx      xxxxx     &kp LG(X)  &kp LG(C)  &kp LG(V)  xxxxx          &bt BT_PRV &bt BT_NXT xxxxx      xxxxx      xxxxx      &bt BT_CLR
+        //│          │          │          │          │          │          │   │ bt prev  │ bt next  │          │          │          │ bt clear │
+             xxxxx      xxxxx     xxxxx      xxxxx      xxxxx      xxxxx          &bt BT_PRV &bt BT_NXT xxxxx      xxxxx      xxxxx      &bt BT_CLR
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                    (O)
                                              xxxxx      xxxxx      xxxxx          xxxxx      xxxxx      xxxxx
         //   
                         >;
