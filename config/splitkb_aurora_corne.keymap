@@ -118,16 +118,17 @@
 			label = "symbols";
                         bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  {       │  &       │  *       │  '       │  }       │   │          │          │          │          │          │          │
-            xxxxx      &kp LBRC   &kp AMPS   &kp STAR   &kp APOS   &kp RBRC       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
+        //│          │  [       │  &       │  *       │  )       │  ]       │   │          │          │          │          │          │          │
+            xxxxx      &kp LBKT   &kp AMPS   &kp STAR   &kp RPAR   &kp RBKT       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  :       │  $       │  %       │  ^       │  +       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    │          │
-            xxxxx      &kp COLON  &kp DLLR   &kp PRCNT  &kp CARET  &kp PLUS       &kp HYPER  &kp RSHIFT &kp LGUI  &kp LALT    &kp LCTRL  xxxxx
+        //│          │  tbd     │  $       │  %       │  ^       │  =       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    │          │
+            xxxxx      xxxxx      &kp DLLR   &kp PRCNT  &kp CARET  &kp EQUAL      &kp HYPER  &kp RSHIFT &kp LGUI  &kp LALT    &kp LCTRL  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  `       │  !       │  @       │  #       │  |       │   │          │          │          │          │          │          │
-            xxxxx      &kp GRAVE  &kp EXCL   &kp AT     &kp HASH   &kp PIPE       xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
+        //│          │  `       │  !       │  @       │  #       │  \       │   │          │          │          │          │          │          │
+            xxxxx      &kp GRAVE  &kp EXCL   &kp AT     &kp HASH   &kp BSLH       xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp LPAR  &kp RPAR    &kp MINUS      xxxxx      xxxxx      xxxxx
+        //                                    (         '           -
+                                             &kp LPAR  &kp APOS    &kp MINUS      xxxxx      xxxxx      xxxxx
         //   
                         >;
                 };    
