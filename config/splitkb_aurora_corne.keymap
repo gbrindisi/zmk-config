@@ -36,6 +36,7 @@
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
                 };
+
                 parpar: parentesis_parentesis {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
@@ -124,16 +125,16 @@
 			label = "symbols";
                         bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │  &       │  *       │          │  ]       │   │          │          │          │          │          │          │
+        //│          │  [       │  &       │  *       │  )       │  ]       │   │          │          │          │          │          │          │
             xxxxx      &kp LBKT   &kp AMPS   &kp STAR   &kp RPAR   &kp RBKT       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │tbd       │  $       │  %       │  ^       │  =       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    │          │
+        //│          │  tbd     │  $       │  %       │  ^       │  =       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    │          │
             xxxxx      xxxxx      &kp DLLR   &kp PRCNT  &kp CARET  &kp EQUAL      &kp HYPER  &kp RSHIFT &kp LGUI  &kp LALT    &kp LCTRL  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  `       │  !       │  @       │  #       │  \       │   │          │          │          │          │          │          │
             xxxxx      &kp GRAVE  &kp EXCL   &kp AT     &kp HASH   &kp BSLH       xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                              '           -
+        //                                    (         '           -
                                              &kp LPAR  &kp APOS    &kp MINUS      xxxxx      xxxxx      xxxxx
         //   
                         >;
@@ -143,14 +144,14 @@
 			label = "numbers";
                         bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  (       │  7       │  8       │  9       │  *       │   │          │          │          │          │          │          │
-            xxxxx      &parpar    &kp N7     &kp N8     &kp N9     &kp STAR       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
+        //│          │  ( )     │  7       │  8       │  9       │  *       │   │          │          │          │          │          │          │
+            xxxxx      &parpar   &kp N7     &kp N8     &kp N9     &kp STAR       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  ,       │  4       │  5       │  6       │  +       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
             xxxxx      &kp COMMA  &kp N4     &kp N5     &kp N6     &kp PLUS       &kp HYPER  &kp RSHIFT  &kp LGUI  &kp LALT   &kp LCTRL  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  ~       │  1       │  2       │  3       │  /       │   │          │          │          │          │          │          │
-            xxxxx      &kp TILDE &kp N1     &kp N2     &kp N3     &kp FSLH       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
+            xxxxx      &kp TILDE  &kp N1     &kp N2     &kp N3     &kp FSLH       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &kp N0     &kp DOT     &kp MINUS     xxxxx       xxxxx     xxxxx
         //   
@@ -183,7 +184,7 @@
             xxxxx      &kp F12    &kp F7     &kp F8     &kp F9     xxxxx          &kp LG(C)  &kp LG(U)  &kp SCREEN &kp LG(X)  &kp LG(V)  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  11      │  4       │  5       │  6       │          │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
-            xxxxx      &kp F11    &kp F4     &kp F5     &kp F6     xxxxx          &kp HYPER  &kp RSHIFT  kp LGUI   &kp LALT   &kp LCTRL  xxxxx
+            xxxxx      &kp F11    &kp F4     &kp F5     &kp F6     xxxxx          &kp HYPER  &kp RSHIFT  &kp LGUI  &kp LALT   &kp LCTRL  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  10      │  1       │  2       │  3       │          │   │          │          │          │          │          │          │
             xxxxx      &kp F10    &kp F2     &kp F2     &kp F3     xxxxx          xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
@@ -203,8 +204,8 @@
         //│          │          │  cmd+s   │  5       │  6       │ +1       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
             xxxxx      xxxxx      &kp LG(S)  xxxxx      xxxxx      &emj_plusone   xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  10      │  cmd+s   │  cmd+s   │  cmd+s   │          │   │  bt next │  bt pre  │          │          │          │  bt clr  │
-             xxxxx      xxxxx     &kp LG(X)  &kp LG(C)  &kp LG(V)  xxxxx         &bt BT_NXT &bt BT_PRV  xxxxx      xxxxx      xxxxx      &bt BT_CLR
+        //│          │  10      │  cmd+s   │  cmd+s   │  cmd+s   │          │   │ bt prev  │ bt next  │          │          │          │ bt clear │
+             xxxxx      xxxxx     &kp LG(X)  &kp LG(C)  &kp LG(V)  xxxxx          &bt BT_PRV &bt BT_NXT xxxxx      xxxxx      xxxxx      &bt BT_CLR
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
                                              xxxxx      xxxxx      xxxxx          xxxxx      xxxxx      xxxxx
         //   
