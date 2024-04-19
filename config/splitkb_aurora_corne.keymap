@@ -36,6 +36,12 @@
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
                 };
+                parpar: parentesis_parentesis {
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp LPAR>, <&kp RPAR>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
         };
 };
 
@@ -118,16 +124,16 @@
 			label = "symbols";
                         bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │  &       │  *       │  )       │  ]       │   │          │          │          │          │          │          │
+        //│          │  [       │  &       │  *       │          │  ]       │   │          │          │          │          │          │          │
             xxxxx      &kp LBKT   &kp AMPS   &kp STAR   &kp RPAR   &kp RBKT       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │(tbd    ) │  $       │  %       │  ^       │  =       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    │          │
+        //│          │tbd       │  $       │  %       │  ^       │  =       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    │          │
             xxxxx      xxxxx      &kp DLLR   &kp PRCNT  &kp CARET  &kp EQUAL      &kp HYPER  &kp RSHIFT &kp LGUI  &kp LALT    &kp LCTRL  xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  `       │  !       │  @       │  #       │  \       │   │          │          │          │          │          │          │
             xxxxx      &kp GRAVE  &kp EXCL   &kp AT     &kp HASH   &kp BSLH       xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                    (         '           -
+        //                                              '           -
                                              &kp LPAR  &kp APOS    &kp MINUS      xxxxx      xxxxx      xxxxx
         //   
                         >;
@@ -138,7 +144,7 @@
                         bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │  (       │  7       │  8       │  9       │  *       │   │          │          │          │          │          │          │
-            xxxxx      xxxxx      &kp N7     &kp N8     &kp N9     &kp STAR       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
+            xxxxx      &parpar    &kp N7     &kp N8     &kp N9     &kp STAR       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  ,       │  4       │  5       │  6       │  +       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
             xxxxx      &kp COMMA  &kp N4     &kp N5     &kp N6     &kp PLUS       &kp HYPER  &kp RSHIFT  &kp LGUI  &kp LALT   &kp LCTRL  xxxxx
@@ -198,7 +204,7 @@
             xxxxx      xxxxx      &kp LG(S)  xxxxx      xxxxx      &emj_plusone   xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  10      │  cmd+s   │  cmd+s   │  cmd+s   │          │   │  bt next │  bt pre  │          │          │          │  bt clr  │
-             xxxxx      xxxxx     &kp LG(X)  &kp LG(C)  &kp LG(V)  xxxxx         &bt BT_NXT &bt BT_PRV xxxxx      xxxxx      xxxxx      &bt BT_CLR
+             xxxxx      xxxxx     &kp LG(X)  &kp LG(C)  &kp LG(V)  xxxxx         &bt BT_NXT &bt BT_PRV  xxxxx      xxxxx      xxxxx      &bt BT_CLR
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
                                              xxxxx      xxxxx      xxxxx          xxxxx      xxxxx      xxxxx
         //   
