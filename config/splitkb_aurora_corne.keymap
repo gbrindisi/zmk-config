@@ -1,0 +1,216 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+// LAYERS
+#define BASE  0
+#define SYM   1
+#define NUM   2
+#define NAV   3
+#define FUNC  4
+#define STUFF 5
+
+// Keycodes
+#define xxxxx &none
+#define HYPER LC(LA(LG(LSHIFT)))
+#define SCREEN LG(LS(N4))
+
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
+
+/ {
+        behaviors {
+                hm: homerow_mods {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "HOMEROW_MODS";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <0>;
+                        flavor = "tap-preferred";
+                        bindings = <&kp>, <&kp>;
+                };
+
+                parpar: parentesis_parentesis {
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp LPAR>, <&kp RPAR>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+        };
+};
+
+// 0  1  2  3  4  5        6  7  8  9  10 11
+// 12 13 14 15 16 17       18 19 20 21 22 23
+// 24 25 26 27 28 29       30 31 32 33 34 35
+//          36 37 38       39 40 41
+/ {
+        combos {
+                compatible = "zmk,combos";
+                combo_caps_word {
+                        timeout-ms = <50>;
+                        bindings = <&caps_word>;
+                        key-positions = <16 19>;
+                };
+        };
+};
+
+
+/ {
+	macros {
+		emj_wave: emj_wave {
+			label = "emj_wave";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			  = <&macro_tap &kp COLON &kp W  &kp A &kp V &kp E &kp COLON>;
+		};
+        emj_plusone: emj_plusone {
+			label = "emj_plusone";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			  = <&macro_tap &kp COLON &kp PLUS &kp N1 &kp COLON>;
+		};
+        emj_eyes: emj_eyes {
+			label = "emj_eyes";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			  = <&macro_tap &kp COLON &kp E &kp Y &kp E &kp S &kp COLON>;
+		};
+        emj_ty: emj_ty {
+			label = "emj_ty";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			  = <&macro_tap &kp COLON &kp T &kp H &kp A &kp N &kp K &kp MINUS &kp Y &kp O &kp U &kp COLON>;
+		};
+	};
+};
+
+#define HRML(k1,k2,k3,k4,k5) &hm LCTRL k1  &hm LALT k2  &hm LGUI k3  &hm LSHFT k4 &hm HYPER k5
+#define HRMR(k1,k2,k3,k4,k5) &hm HYPER k1  &hm RSHFT k2  &hm RGUI k3  &hm RALT k4  &hm RCTRL k5
+#define LAYER(k1,k2,k3,k4,k5,k6) &lt NAV k1     &lt NAV k2      &lt STUFF k3  &lt FUNC k4      &lt SYM k5      &lt NUM k6 
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
+
+                BASE_layer {
+			label = "qwerty";
+                        bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │          │
+            xxxxx      &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P      xxxxx
+        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  K       │  L       │          │
+            xxxxx      HRML(A,    S,         D,         F,         G)             HRMR(H,    J,         K,         L,         SEMI)      xxxxx
+        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  / ?     │          │
+            xxxxx      &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   xxxxx
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+                                  LAYER(     ESC,       TAB,       SPACE,         RET,       BSPC,      DEL        )
+        //   
+                        >;
+                };
+
+                SYM_layer {
+			label = "symbols";
+                        bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │  [       │  &       │  *       │  (       │  ]       │   │          │          │          │          │          │          │
+            xxxxx      &kp LBKT   &kp AMPS   &kp STAR   &kp LPAR   &kp RBKT       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
+        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │  tbd     │  $       │  %       │  ^       │  =       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    │          │
+            xxxxx      xxxxx      &kp DLLR   &kp PRCNT  &kp CARET  &kp EQUAL      &kp HYPER  &kp RSHIFT &kp LGUI  &kp LALT    &kp LCTRL  xxxxx
+        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │  `       │  !       │  @       │  #       │  \       │   │          │          │          │          │          │          │
+            xxxxx      &kp GRAVE  &kp EXCL   &kp AT     &kp HASH   &kp BSLH       xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                    )         '           -
+                                             &kp RPAR  &kp APOS    &kp MINUS      xxxxx      xxxxx      xxxxx
+        //   
+                        >;
+                };    
+
+                NUM_layer {
+			label = "numbers";
+                        bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │  ( )     │  7       │  8       │  9       │  *       │   │          │          │          │          │          │          │
+            xxxxx      &parpar   &kp N7     &kp N8     &kp N9     &kp STAR       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
+        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │  ,       │  4       │  5       │  6       │  +       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
+            xxxxx      &kp COMMA  &kp N4     &kp N5     &kp N6     &kp PLUS       &kp HYPER  &kp RSHIFT  &kp LGUI  &kp LALT   &kp LCTRL  xxxxx
+        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │  ~       │  1       │  2       │  3       │  /       │   │          │          │          │          │          │          │
+            xxxxx      &kp TILDE  &kp N1     &kp N2     &kp N3     &kp FSLH       xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &kp N0     &kp DOT     &kp MINUS     xxxxx       xxxxx     xxxxx
+        //   
+                        >;
+                };  
+
+                NAV_layer {
+			label = "nav";
+                        bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │          │   │          │          │          │          │          │          │
+            xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx          &kp LG(C)  &kp LG(U)  &kp SCREEN &kp LG(X)  &kp LG(V)  xxxxx
+        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │  CTRL    │  ALT     │  GUI     │  SHIFT   │  HYPER   │   │  LEFT    │  DOWN    │  UP      │  RIGHT   │          |          │
+            xxxxx      &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHIFT &kp HYPER      &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  xxxxx      xxxxx
+        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │          │   │          │          │          │          │          │          │
+            xxxxx       xxxxx     xxxxx      xxxxx      xxxxx      xxxxx          &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    xxxxx      xxxxx
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &kp N0     &kp DOT    &kp MINUS      &kp RET    &kp BKSP   &kp DEL
+        //   
+                        >;
+                };     
+
+                FUNC_layer {
+			label = "func";
+                        bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │  12      │  7       │  8       │  9       │          │   │          │          │          │          │          │          |
+            xxxxx      &kp F12    &kp F7     &kp F8     &kp F9     xxxxx          &kp LG(C)  &kp LG(U)  &kp SCREEN &kp LG(X)  &kp LG(V)  xxxxx
+        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │  11      │  4       │  5       │  6       │          │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
+            xxxxx      &kp F11    &kp F4     &kp F5     &kp F6     xxxxx          &kp HYPER  &kp RSHIFT  &kp LGUI  &kp LALT   &kp LCTRL  xxxxx
+        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │  10      │  1       │  2       │  3       │          │   │          │          │          │          │          │          │
+            xxxxx      &kp F10    &kp F2     &kp F2     &kp F3     xxxxx          xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             xxxxx      xxxxx      xxxxx          xxxxx      xxxxx      xxxxx
+        //   
+                        >;
+                };           
+        	
+		        STUFF_layer {
+			label = "stuff";
+                        bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │  12      │  wave    │  8       │  9       │ ty       │   │          │          │          │          │          │          |
+            xxxxx      xxxxx      &emj_wave  &emj_eyes  xxxxx      &emj_ty        xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
+        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │  cmd+s   │  5       │  6       │ +1       │   │  HYPER   │  SHIFT   │  GUI     │  ALT     │  CTRL    |          │
+            xxxxx      xxxxx      &kp LG(S)  xxxxx      xxxxx      &emj_plusone   xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
+        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │  10      │  cmd+s   │  cmd+s   │  cmd+s   │          │   │ bt prev  │ bt next  │          │          │          │ bt clear │
+             xxxxx      xxxxx     &kp LG(X)  &kp LG(C)  &kp LG(V)  xxxxx          &bt BT_PRV &bt BT_NXT xxxxx      xxxxx      xxxxx      &bt BT_CLR
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             xxxxx      xxxxx      xxxxx          xxxxx      xxxxx      xxxxx
+        //   
+                        >;
+                };           
+
+        };
+};
