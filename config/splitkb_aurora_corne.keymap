@@ -43,6 +43,13 @@
                         bindings = <&kp LPAR>, <&kp RPAR>;
                         mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
+
+                ticktap: tap_dance_characters {
+                    compatible = "zmk,behavior-tap-dance";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&kp Z>, <&ticks>;
+                };
         };
 };
 
@@ -92,6 +99,12 @@
 			bindings
 			  = <&macro_tap &kp COLON &kp T &kp H &kp A &kp N &kp K &kp MINUS &kp Y &kp O &kp U &kp COLON>;
 		};
+        ticks: ticks {
+            label = "ticks";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
+        };
 	};
 };
 
@@ -122,7 +135,7 @@
             xxxxx      HRML(A,    S,         D,         F,         G)             HRMR(H,    J,         K,         L,         SEMI)      xxxxx
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  / ?     │          │
-            xxxxx      &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   xxxxx
+            xxxxx      &ticktap   &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   xxxxx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
                                          LL( ESC,       TAB)       SPGUI()    RL( RET,       BSPC,      DEL        )
         //   
@@ -207,7 +220,7 @@
 
 		        STUFF_layer {
 			label = "stuff";
-                        bindings = <
+                    bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │  wave    │          │          │ ty       │   │          │          │          │          │          │          |
             xxxxx      xxxxx      &emj_wave  &emj_eyes  xxxxx      &emj_ty        xxxxx      xxxxx      xxxxx      xxxxx      xxxxx      xxxxx
